@@ -33,7 +33,26 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         int quantity = 2;
         display(quantity);
-        displayPrice(quantity * 6);
+        displayPrice(quantity * 5);
+    }
+
+    /**
+     * This method is called when the plus is clicked.
+     */
+    public void submitIncrement(View view) {
+        int quantity = 2;
+        quantity = quantity + 1;
+        quantity = quantity + 1;
+        display(quantity);
+    }
+
+    /**
+     * This method is called when the minus is clicked.
+     */
+    public void submitDecrement(View view) {
+        int quantity = 2;
+        quantity = quantity - 1;
+        display(quantity);
     }
 
     /**
