@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * This app displays an order form to order coffee.
@@ -91,7 +92,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the plus is clicked.
      */
     public void submitIncrement(View view) {
-
+        if (quantity == 100) {
+            //show an error message as a toast
+            Toast.makeText(this, "100 max limit per order", Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity = quantity + 1;
         displayQuantity(quantity);
     }
@@ -100,7 +105,11 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the minus is clicked.
      */
     public void submitDecrement(View view) {
-
+        if (quantity ==1) {
+            //show an error message as a toast
+            Toast.makeText(this, "Must order one or more per oder", Toast.LENGTH_SHORT).show();
+            return;
+        }
         quantity = quantity - 1;
         displayQuantity(quantity);
     }
